@@ -51,14 +51,16 @@ export class ChaseComponent implements OnInit {
   }
 
   moveToTarget() {
-    let dx = this.targetX - this.x;
-    let dy = this.targetY - this.y;
+    let w = this.it.nativeElement.width;
+    let h = this.it.nativeElement.height;
+    let dx = this.targetX - (this.x + w / 2.0);
+    let dy = this.targetY - (this.y + h / 2.0);
     let angle = Math.atan2(dy, dx);
     let dist = Math.sqrt(dx * dx + dy * dy);
 
     this.renderer.setStyle(this.it.nativeElement, 'transform', `rotate(${angle}rad)`);
 
-    if (dist > this.it.nativeElement.width / 2.0) {
+    if (dist > w * 2.0 / 3.0) {
       const delta = this.clip(dist * 0.1, 0, 3);
       dx = delta * Math.cos(angle);
       dy = delta * Math.sin(angle);
