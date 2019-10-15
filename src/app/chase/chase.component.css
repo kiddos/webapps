@@ -1,0 +1,10 @@
+.container {
+  width: 100%;
+  height: calc(100% - 64px);
+}
+
+.it {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
