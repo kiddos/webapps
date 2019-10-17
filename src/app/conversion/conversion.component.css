@@ -1,0 +1,40 @@
+.card {
+  max-width: 390px;
+  margin: 30px;
+}
+
+.conversion {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.block {
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.block input[type="text"] {
+  width: 156px;
+  padding: 5px 10px;
+  font-size: 1.0em;
+}
+
+.block select {
+  width: 180px;
+}
+
+.equal {
+  margin-top: 7px;
+}
+
+select {
+  background-color: #F2F4F4;
+  border: 1px solid #D5D8DC;
+  padding: 5px 5px;
+}

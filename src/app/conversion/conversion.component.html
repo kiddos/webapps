@@ -1,0 +1,28 @@
+<mat-card class="card">
+  <h3>Conversion</h3>
+
+  <select [(value)]="current.name" class="conversion">
+    <option *ngFor="let c of conversion" [value]="c.name">
+      {{ c.name }}
+    </option>
+  </select>
+
+  <div class="content">
+    <div class="block">
+      <input type="text" (input)="convert(part1, part2)" [(ngModel)]="part1.value">
+      <select [(ngModel)]="part1.unit" (change)="convert(part1, part2)">
+        <option *ngFor="let unit of current.units" [value]="unit">{{ unit }}</option>
+      </select>
+    </div>
+
+    <span class="equal">=</span>
+
+    <div class="block">
+      <input type="text" (input)="convert(part2, part1)" [(ngModel)]="part2.value">
+      <select [(ngModel)]="part2.unit" (change)="convert(part1, part2)">
+        <option *ngFor="let unit of current.units" [value]="unit">{{ unit }}</option>
+      </select>
+    </div>
+  </div>
+</mat-card>
+
