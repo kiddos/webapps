@@ -1,0 +1,22 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-radio-group {
+  margin-top: 10px;
+}
+
+mat-radio-button {
+  margin: 10px;
+}
+
+.game-pad {
+  margin-top: 30px;
+}
+
+canvas {
+  border: 1px solid black;
+}
+

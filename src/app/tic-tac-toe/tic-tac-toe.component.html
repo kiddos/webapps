@@ -1,0 +1,14 @@
+<div class="game">
+  <mat-radio-group aria-label="Select"
+      [(ngModel)]="player" (change)="startGame()">
+    <mat-radio-button *ngFor="let s of sides; let i = index" [value]="s">{{ s.name }}</mat-radio-button>
+  </mat-radio-group>
+
+  <div class="game-pad">
+    <canvas width="300" height="300" #gamePad (click)="handleClick($event)">
+      Sorry your browser does not support canvas !!
+    </canvas>
+  </div>
+
+  <mat-spinner diameter="30" *ngIf="!playerTurn"></mat-spinner>
+</div>
