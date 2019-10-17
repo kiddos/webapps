@@ -1,10 +1,17 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>kiddo's webapps</span>
+    <span>
+      <a mat-flat-button routerLink="/" color="primary"><h1>kiddo's webapps</h1></a>
+    </span>
 
     <button mat-button [matMenuTriggerFor]="games" class="nav-item">Games</button>
     <mat-menu #games="matMenu">
-      <button mat-menu-item>Tic Tac Toe</button>
+      <a mat-menu-item>Tic Tac Toe</a>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="tools" class="nav-item">Tools</button>
+    <mat-menu #tools="matMenu">
+      <a mat-menu-item routerLink="conversion">Conversion</a>
     </mat-menu>
 
     <span style="flex: 1 1 auto;"></span>
