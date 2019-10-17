@@ -11,15 +11,24 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { ChaseComponent } from './chase/chase.component';
 import { ConversionComponent } from './conversion/conversion.component';
+import { TicTacToeComponent, GameOverDialog } from './tic-tac-toe/tic-tac-toe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChaseComponent,
     ConversionComponent,
+    TicTacToeComponent,
+    GameOverDialog,
+  ],
+  entryComponents: [
+    GameOverDialog,
   ],
   imports: [
     FormsModule,
@@ -31,6 +40,9 @@ import { ConversionComponent } from './conversion/conversion.component';
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
+    MatRadioModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
