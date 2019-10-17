@@ -15,11 +15,11 @@ class Part {
   styleUrls: ['./conversion.component.css']
 })
 export class ConversionComponent implements OnInit {
-  private conversion: Array<Conversion>;
-  private current: Conversion;
+  conversion: Array<Conversion>;
+  current: Conversion;
 
-  private part1: Part = new Part();
-  private part2: Part = new Part();
+  part1: Part = new Part();
+  part2: Part = new Part();
 
   constructor() {
     this.conversion = [new Temperature(), new Length()];
