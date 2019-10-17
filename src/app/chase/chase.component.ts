@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/co
   styleUrls: ['./chase.component.css']
 })
 export class ChaseComponent implements OnInit {
-  @ViewChild('it', { static: false }) it: ElementRef<HTMLCanvasElement>;
+  @ViewChild('it', { static: false }) it: ElementRef<HTMLImageElement>;
 
   private init: boolean;
   private moving: boolean;
