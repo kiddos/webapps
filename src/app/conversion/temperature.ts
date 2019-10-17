@@ -6,6 +6,7 @@ export class Temperature extends Conversion {
 
     this.name = 'Temperature';
     this.units = ['Celsius', 'Fahrenheit', 'Kelvin'];
+    this.defaultValue = 0.0;
   }
 
   convert(unit1: string, unit2: string, value: number) : number {
