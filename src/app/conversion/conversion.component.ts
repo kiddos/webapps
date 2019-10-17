@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Conversion } from './conversion';
 import { Temperature } from './temperature';
+import { Length } from './length';
 
 class Part {
   public value: number;
@@ -21,7 +22,7 @@ export class ConversionComponent implements OnInit {
   private part2: Part = new Part();
 
   constructor() {
-    this.conversion = [new Temperature()];
+    this.conversion = [new Temperature(), new Length()];
 
     this.chooseConversion(0);
   }
@@ -35,15 +36,21 @@ export class ConversionComponent implements OnInit {
     this.part1.unit = this.current.units[0];
     this.part2.unit = this.current.units[1];
 
-    this.part1.value = 0;
+    this.part1.value = this.current.defaultValue;
     this.part2.value = this.current.convert(
-      this.part1.unit, this.part2.unit, 0);
+      this.part1.unit, this.part2.unit, this.current.defaultValue);
   }
 
   convert(fromPart: Part, toPart: Part) : void {
     let v = this.current.convert(
       fromPart.unit, toPart.unit, fromPart.value);
-    v = parseFloat(v.toFixed(3));
+
+    let precision = 3;
+    let s = fromPart.value.toString();
+    if (s.indexOf('.') >= 0) {
+      precision = s.length - s.indexOf('.');
+    }
+    v = parseFloat(v.toFixed(precision));
     toPart.value = v;
   }
 }

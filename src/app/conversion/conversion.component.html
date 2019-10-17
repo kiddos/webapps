@@ -1,8 +1,9 @@
 <mat-card class="card">
   <h3>Conversion</h3>
 
-  <select [(value)]="current.name" class="conversion">
-    <option *ngFor="let c of conversion" [value]="c.name">
+  <select value="0" class="conversion"
+      (change)="chooseConversion($event.target.value)">
+    <option *ngFor="let c of conversion; let i = index" [value]="i">
       {{ c.name }}
     </option>
   </select>
