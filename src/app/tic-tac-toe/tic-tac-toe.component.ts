@@ -13,14 +13,14 @@ import { AI } from './ai';
 export class TicTacToeComponent implements OnInit {
   @ViewChild('gamePad', { static: false}) gamePad: ElementRef<HTMLCanvasElement>;
 
-  private sides: Array<Side>;
+  sides: Array<Side>;
 
   private context: CanvasRenderingContext2D;
   private grid: Grid;
 
-  private player: Side;
-  private ai: AI;
-  private playerTurn: boolean;
+  player: Side;
+  ai: AI;
+  playerTurn: boolean;
 
   constructor(public dialog: MatDialog) {
     this.sides = [new Side('X', -1), new Side('O', 1)]
