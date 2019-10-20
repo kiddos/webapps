@@ -1,0 +1,27 @@
+.container {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button, mat-radio-button, a {
+  margin-right: 10px;
+}
+
+canvas {
+  border: 1px solid black;
+}
+
+mat-form-field {
+  margin-right: 10px;
+}
+
+.info-box {
+  font-size: 0.5em;
+  margin-bottom: 10px;
+}
+
+.info {
+  margin-right: 5px;
+}

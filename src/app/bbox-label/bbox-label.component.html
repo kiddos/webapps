@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="canvas">
+    <canvas #canvas [width]="width" [height]="height"
+      (mousedown)="handleMouseDown($event)"
+      (mouseup)="handleMouseUp($event)"
+      (mouseleave)="handleMouseUp($event)"
+      (mousemove)="handleMouseMove($event)"></canvas>
+
+    <div class="info-box" >
+      <span class="info" *ngIf="mouseLocation">
+        mouse: {{ mouseLocation.toString() }}
+      </span>
+      <span class="info" *ngIf="currentHighlight">
+        current point: {{ currentHighlight.toString() }}
+      </span>
+      <span class="info" *ngIf="currentBBox">
+        current bounding box: {{ currentBBox.toString() }}
+      </span>
+    </div>
+
+    <div class="dimension">
+      <mat-form-field>
+        <input matInput placeholder="width" [(ngModel)]="width">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="height" [(ngModel)]="height">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="button-panel">
+    <button mat-flat-button color="accent"
+      (click)="uploadImage.click()"
+      matTooltip="select an Image">Choose Image</button>
+    <input hidden (change)="handleFile($event.target.files)" #uploadImage
+      type="file" id="file" accept="image/x-png,image/gif,image/jpeg">
+
+    <mat-radio-group aria-label="Select an option" color="primary"
+      (change)="switchMode($event)">
+      <mat-radio-button value="Add" checked
+        matTooltip="Select to Add BBox">Add</mat-radio-button>
+      <mat-radio-button value="Edit"
+        matTooltip="Select to Edit BBox">Edit</mat-radio-button>
+    </mat-radio-group>
+
+    <button mat-flat-button color="warn"
+      (click)="clearLabels()"
+      matTooltip="Clear BBox">Clear</button>
+
+    <a mat-flat-button color="primary"
+      (click)="saveLabels()"
+      matTooltip="Save the labels">Save</a>
+
+    <button mat-flat-button color="accent"
+      (click)="uploadLabel.click()"
+      matTooltip="select saved Label">Continue Label</button>
+    <input hidden (change)="loadLabels($event.target.files)" #uploadLabel
+      type="file" id="file" accept="application/json">
+
+    <button mat-icon-button color="primary"
+      (click)="openHelp()">
+      <mat-icon aria-hidden="false" aria-label="help icon">help</mat-icon>
+    </button>
+  </div>
+</div>
