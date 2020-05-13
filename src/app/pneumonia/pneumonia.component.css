@@ -1,0 +1,27 @@
+.image-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  border: 1px solid black;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.result-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.result {
+  padding: 20px;
+  max-width: 300px;
+  box-shadow: 0 0 3px #666;
+}

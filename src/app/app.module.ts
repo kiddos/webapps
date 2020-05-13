@@ -20,6 +20,7 @@ import { ChaseComponent } from './chase/chase.component';
 import { ConversionComponent } from './conversion/conversion.component';
 import { TicTacToeComponent, GameOverDialog } from './tic-tac-toe/tic-tac-toe.component';
 import { BBoxLabelComponent, HelpDialog } from './bbox-label/bbox-label.component';
+import { PneumoniaComponent } from './pneumonia/pneumonia.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BBoxLabelComponent, HelpDialog } from './bbox-label/bbox-label.componen
     GameOverDialog,
     BBoxLabelComponent,
     HelpDialog,
+    PneumoniaComponent,
   ],
   entryComponents: [
     GameOverDialog,

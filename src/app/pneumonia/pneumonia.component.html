@@ -1,0 +1,18 @@
+<div class="image-container">
+  <canvas width="256" height="256" #canvas>
+    Sorry!! Your browser does not support HTML5
+  </canvas>
+
+</div>
+
+<div class="button-container">
+  <button mat-flat-button color="accent"
+    (click)="uploadImage.click()"
+    matTooltip="select an Image">Choose Image</button>
+  <input hidden (change)="handleFile($event.target.files)" #uploadImage
+    type="file" id="file" accept="image/x-png,image/gif,image/jpeg">
+</div>
+
+<div class="result-container">
+  <span class="result" *ngIf="result.length > 0">{{ result }}</span>
+</div>
