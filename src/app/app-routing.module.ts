@@ -5,6 +5,7 @@ import { ChaseComponent } from './chase/chase.component';
 import { ConversionComponent } from './conversion/conversion.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { BBoxLabelComponent } from './bbox-label/bbox-label.component';
+import { PneumoniaComponent } from './pneumonia/pneumonia.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,11 @@ const routes: Routes = [
     component: BBoxLabelComponent,
     data: { title: 'Bounding Box Label'},
   },
+  {
+    path: 'pneumonia',
+    component: PneumoniaComponent,
+    data: { title: 'Detect Pneumonia From Xray'},
+  }
 ];
 
 @NgModule({
