@@ -11,7 +11,7 @@ export class PneumoniaComponent implements OnInit {
   canvas: ElementRef<HTMLCanvasElement>;
 
   private context: CanvasRenderingContext2D;
-  private result: string = "";
+  result: string = "";
   private model: tf.LayersModel;
 
   constructor() { }
