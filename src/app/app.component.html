@@ -9,6 +9,11 @@
       </h1>
     </span>
 
+    <button mat-button [matMenuTriggerFor]="medical" class="nav-item">Medical</button>
+    <mat-menu #medical="matMenu">
+      <a mat-menu-item routerLink="pneumonia">Detect Pneumonia From Xray Images</a>
+    </mat-menu>
+
     <button mat-button [matMenuTriggerFor]="games" class="nav-item">Games</button>
     <mat-menu #games="matMenu">
       <a mat-menu-item routerLink="tic-tac-toe">Tic Tac Toe</a>
