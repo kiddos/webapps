@@ -18,6 +18,14 @@ export class PneumoniaComponent implements OnInit {
 
   async loadModel() {
     this.model = await tf.loadLayersModel('assets/pneumonia-densenet/model.json');
+    this.setQuickMessage('Model loaded');
+  }
+
+  setQuickMessage(msg: string) {
+    this.result = msg;
+    setTimeout(() => {
+      this.result = '';
+    }, 2000);
   }
 
   ngOnInit() {
@@ -63,20 +71,28 @@ export class PneumoniaComponent implements OnInit {
     }
 
     let tensor = tf.tensor(data).reshape([1, h, w, 1]);
-    let result = this.model.predict(tensor) as tf.Tensor;
-    return result;
+    if (this.model) {
+      let result = this.model.predict(tensor) as tf.Tensor;
+      return result;
+    } else {
+      return null;
+    }
   }
 
   async asyncPredict() {
     return new Promise(resolve => {
       let result = this.predict();
-      result.print();
-      let array = result.arraySync()[0];
+      if (result) {
+        result.print();
+        let array = result.arraySync()[0];
 
-      if (array[0] > array[1]) {
-        this.result = `Normal: ${array[0].toFixed(6)}`;
+        if (array[0] > array[1]) {
+          this.result = `Normal: ${array[0].toFixed(6)}`;
+        } else {
+          this.result = `Pneumonia: ${array[1].toFixed(6)}`;
+        }
       } else {
-        this.result = `Pneumonia: ${array[1].toFixed(6)}`;
+        this.setQuickMessage('Model not ready yet');
       }
       resolve();
     });
